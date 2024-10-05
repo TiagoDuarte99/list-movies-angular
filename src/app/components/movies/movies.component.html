@@ -1,0 +1,20 @@
+<div class="cards-container">
+  <div class="cards">
+    <app-movie-card
+      *ngFor="let movie of movies"
+      [movie]="movie"
+    ></app-movie-card>
+  </div>
+</div>
+
+<mat-paginator
+  #paginator
+  *ngIf="movies?.length"
+  class="paginator"
+  [length]="totalResults"
+  [pageSize]="20"
+  [hidePageSize]="true"
+  aria-label="Select page"
+  (page)="changePage($event.pageIndex + 1)"
+>
+</mat-paginator>

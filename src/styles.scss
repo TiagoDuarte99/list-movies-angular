@@ -1,0 +1,44 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+body.dark-theme {
+  background-color: #303030;
+  color: #fff;
+}
+
+body.light-theme {
+  background-color: #fff;
+  color: #000;
+}
+
+.cards-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  padding-top: 64px;
+  padding-bottom: 80px;
+}
+
+.cards {
+  max-width: 90%;
+  margin: 0 auto;
+  display: grid;
+  justify-content: center;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.paginator {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}

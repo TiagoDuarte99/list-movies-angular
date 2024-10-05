@@ -1,0 +1,55 @@
+<div class="movie-details-wrapper">
+  <div class="movie-details-container" *ngIf="!showNotFound; else notFound">
+    <div class="movie-details-image">
+      <img
+        src="https://www.themoviedb.org/t/p/w440_and_h660_face{{
+          movie?.poster_path
+        }}"
+      />
+    </div>
+    <div class="movie-details-content">
+      <div>
+        <h1>{{ movie?.title }}</h1>
+        <span
+          >{{ movie?.release_date | date : "dd/M/yyyy" }} |
+          {{ movie?.genres[0]?.name }} | {{ movie?.runtime }} min</span
+        >
+        <div>
+          <button mat-raised-button disabled color="primary" class="buttonPerc">
+            {{ (movie?.vote_average * 10).toFixed(0) }} %
+          </button>
+          
+          <button
+            *ngIf="showWatchListButton === true"
+            mat-raised-button
+            color="accent"
+            (click)="addMovieToWatchList()"
+          >
+            <mat-icon>
+              <span class="material-symbols-rounded"> add_circle </span>
+            </mat-icon>
+            Watchlist
+          </button>
+          <button
+            *ngIf="showWatchListButton === false"
+            mat-raised-button
+            color="accent"
+            (click)="deleteMovieToWatchList()"
+          >
+            <mat-icon>
+              <span class="material-symbols-rounded"> delete </span>
+            </mat-icon>
+            Watchlist
+          </button>
+        </div>
+        <h5>{{ movie?.tagline }}</h5>
+        <h3>Overview</h3>
+        <p>{{ movie?.overview }}</p>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #notFound>
+    <app-error-not-found></app-error-not-found>
+  </ng-template>
+</div>

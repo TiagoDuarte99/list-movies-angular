@@ -1,0 +1,17 @@
+<mat-card [routerLink]="['/movies-details', movie.id]" class="movie-card"  [ngStyle]="{ 'background-color': isDarkTheme ? '#303030' : '#818181' }">
+  <img
+    mat-card-image
+    src="https://www.themoviedb.org/t/p/w440_and_h660_face{{
+      movie.poster_path
+    }}"
+  />
+  <div style="padding: 1rem">
+    <mat-card-title> {{ movie.title | truncate }}</mat-card-title>
+    <mat-card-subtitle>
+      {{ movie.release_date | date : "dd/M/yyyy" }}</mat-card-subtitle
+    >
+    <div style="display: flex; justify-content: right">
+      <mat-chip>{{ (movie.vote_average * 10).toFixed(0) }} %</mat-chip>
+    </div>
+  </div>
+</mat-card>

@@ -1,0 +1,56 @@
+<div class="toolbar">
+  <div class="toolbar-container">
+    <div>
+      <button mat-button [routerLink]="['/movies']" routerLinkActive="activebutton" (click)="reloadPage('/movies')">
+        <mat-icon>
+          <span class="material-symbols-outlined"> theaters </span>
+        </mat-icon>
+        Movies
+      </button>
+
+      <button mat-button [routerLink]="['/top']" routerLinkActive="activebutton" (click)="reloadPage('/top')">
+        Top
+      </button>
+
+      <button mat-button [routerLink]="['/watchlist']" routerLinkActive="activebutton"(click)="reloadPage('/watchlist')">
+        Watchlist
+      </button>
+
+    </div>
+
+    <div class="container">
+      <div class="theme">
+        <input type="checkbox" class="checkbox" id="checkbox" (change)="toggleTheme()">
+        <label for="checkbox" class="checkbox-label">
+          <mat-icon class="icon1">brightness_2</mat-icon>
+          <mat-icon class="icon">wb_sunny</mat-icon>
+          <span class="ball"></span>
+        </label>
+      </div>
+      <div class="search-form">
+        <form (ngSubmit)="onSearchClick()">
+          <mat-form-field>
+            <input matInput placeholder="Search" name="search" [(ngModel)]="searchText" />
+            <button *ngIf="searchText" matSuffix mat-icon-button aria-label="Clear" (click)="onClickClearSearchField()"
+              type="button">
+              <mat-icon>close</mat-icon>
+            </button>
+            <button matSuffix mat-icon-button type="submit">
+              <mat-icon>search</mat-icon>
+            </button>
+          </mat-form-field>
+        </form>
+      </div>
+
+
+      <div class="menu-icon">
+        <button mat-icon-button class="custom-icon-button">
+          <mat-icon>menu</mat-icon>
+        </button>
+      </div>
+
+    </div>
+
+
+  </div>
+</div>

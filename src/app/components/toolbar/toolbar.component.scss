@@ -1,0 +1,97 @@
+.toolbar {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  background-color: #303030;
+  height: 70px;
+}
+
+.toolbar-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+}
+
+.activebutton {
+  color: #f48fb1 !important;
+}
+
+.search-form {
+  display: none;
+  color: white !important;
+}
+
+.menu-icon {
+  display: block;
+  color: white !important;
+}
+
+@media screen and (min-width: 720px) {
+  .search-form {
+    display: block;
+  }
+
+  .menu-icon {
+    display: none;
+  }
+}
+
+
+
+.checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+.checkbox-label {
+  background-color: #111;
+  width: 50px;
+  height: 26px;
+  border-radius: 50px;
+  position: relative;
+  padding: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fa-moon {
+  color: #f1c40f;
+}
+
+.fa-sun {
+  color: #f39c12;
+}
+
+.checkbox-label .ball {
+  background-color: #fff;
+  width: 28px;
+  height: 28px;
+  position: absolute;
+  left: 2px;
+  top: 3px;
+  border-radius: 50%;
+  transition: transform 0.2s linear;
+}
+
+.checkbox:checked+.checkbox-label .ball {
+  transform: translateX(26px);
+}
+
+.icon {
+  color: yellow !important;
+}
+
+.icon1 {
+  color: antiquewhite !important;
+}
+
+.container {
+  display: flex;
+}
+
+.theme {
+  margin-top: 8px !important;
+}
